@@ -1,0 +1,12 @@
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\bin\Debug\Komodo Insurance_Console.exe.config
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\bin\Debug\Komodo Insurance_Console.exe
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\bin\Debug\Komodo Insurance_Console.pdb
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\obj\Debug\Komodo Insurance_Console.csprojAssemblyReference.cache
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\obj\Debug\Komodo Insurance_Console.csproj.CoreCompileInputs.cache
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\obj\Debug\Komodo Insurance_Console.exe
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\obj\Debug\Komodo Insurance_Console.pdb
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\bin\Debug\DeveloperRepo.dll
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\bin\Debug\DevTeamRepo.dll
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\bin\Debug\DeveloperRepo.pdb
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\bin\Debug\DevTeamRepo.pdb
+C:\Users\ericl\ElevenFiftyProjects\Komodo Insurance_Console\obj\Debug\Komodo Insurance_Console.csproj.CopyComplete
