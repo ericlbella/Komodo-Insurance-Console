@@ -291,6 +291,10 @@ namespace Komodo_Insurance_Console
             {
                 Console.WriteLine("The developer could not be deleted.");
             }
+
+            DevRepo _repo = new DevRepo();
+
+           
         }
 
         // See method
@@ -328,8 +332,8 @@ namespace Komodo_Insurance_Console
             newTeam.TeamName = Console.ReadLine();
 
             // Team of Developers
-            List<Developer> teamMembers = new List<Developer>();
-            newTeam.ListOfDevelopers = teamMembers;
+            //List<Developer> teamMembers = new List<Developer>();
+            //newTeam.ListOfDevelopers = teamMembers;
 
             _teamRepo.AddDevTeamToList(newTeam);
         }
@@ -406,17 +410,17 @@ namespace Komodo_Insurance_Console
         private void AddDeveloperToTeam()
         {
             Console.Clear();
-            DevTeam newTeam = new DevTeam();
+
 
             // Prompt the user to give a Team ID
             Console.WriteLine("Enter the TeamID of the team you'd like to add a developer to.");
 
             // Get the user's input
-            string newDevIDNumber = Console.ReadLine();
-            newTeam.TeamID = int.Parse(newDevIDNumber);
+            string teamID = Console.ReadLine();
+            int group = int.Parse(teamID);
 
             // Find the team by TeamID
-            DevTeam team = _teamRepo.GetDevTeamByID(newTeam.TeamID);
+            DevTeam team = _teamRepo.GetDevTeamByID(group);
 
             // Display team if TeamID isn't null
             if (team != null)
@@ -441,34 +445,77 @@ namespace Komodo_Insurance_Console
 
                 DisplayAllDevelopers();
 
-                Console.WriteLine("Type in the first name of the developer you would like to add to the team.");
+                Console.WriteLine("Type in Developer ID of the developer you would like to add to the team.");
                 string programmer = Console.ReadLine();
+                int developerID = int.Parse(programmer);
+                List<Developer> devs = _programmerRepo.GetDeveloperList();
 
-                foreach (Developer contractor in _programmerRepo._listOfDevelopers)
+                foreach (Developer contractor in devs)
                 {
-                    if (contractor.DeveloperFirstName == programmer)
+                    if (contractor.IDNumber == developerID)
                     {
                         _teamRepo.AddDeveloperToTeam(contractor, team);
                     }
                 }
             }
-        
-                   
-                // Get DevTeam by teamId
-                // Get Developer to add by developerId
-                    // dig into devTeam object to get to team members property
-                    // Add Developer to property (which is a List<Developer>)
-                }
+
+        }      
+                
 
         // Remove developer from development team
         private void RemoveDeveloperFromTeam()
         {
-            // Get DevTeam by teammID
-            // Get developer to remove
-            // dig into devTeam object to get to team members property
-            // Delete developer to property (which is a List<Developer>)
+                Console.Clear();
 
-        }
+                // Prompt the user to give a Team ID
+                Console.WriteLine("Enter the TeamID of the team you'd like to remove a developer from.");
+
+                // Get the user's input
+                string teamID = Console.ReadLine();
+                int group = int.Parse(teamID);
+
+                // Find the team by TeamID
+                DevTeam team = _teamRepo.GetDevTeamByID(group);
+
+                // Display team if TeamID isn't null
+                if (team != null)
+                {
+                    Console.WriteLine($"IDNumber:{team.TeamID}\n" +
+                     $"Team Name: {team.TeamName}");
+
+
+                    if (team.ListOfDevelopers != null)
+                    {
+                        foreach (Developer teamMember in team.ListOfDevelopers)
+                        {
+
+                            Console.WriteLine($"Team Member: {teamMember}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No team members exist");
+                    }
+
+
+                    DisplayAllDevelopers();
+
+                    Console.WriteLine("Type in Developer ID of the developer you would like to remove from the team.");
+                    string programmer = Console.ReadLine();
+                    int developerID = int.Parse(programmer);
+                    List<Developer> devs = _programmerRepo.GetDeveloperList();
+
+                    foreach (Developer contractor in devs)
+                    {
+                        if (contractor.IDNumber == developerID)
+                        {
+                            _teamRepo.RemoveDeveloperFromTeam(contractor, team);
+                        }
+                    }
+                }
+
+            }
+
 
         // Update existing team
         private void UpdateExistingTeam()
